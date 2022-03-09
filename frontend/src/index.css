@@ -16,3 +16,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+
+.rounded{
+  height:470px;
+}
+.schedule{
+  color:red;
+  font-family: 'Josefin Sans', sans-serif;
+  
+}

@@ -16,7 +16,6 @@ const Tickets = ({value,text,color}) => {
         </div>
   )
 }
-
 Tickets.defaultProps = {
     color: 'yellow',
   }
