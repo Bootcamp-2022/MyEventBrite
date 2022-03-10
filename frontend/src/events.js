@@ -9,7 +9,8 @@ const events = [
         Address: 'Magnuson Park Hangar 30 • Seattle, WA',
         price: 'Starts at $12.50',
         name: 'Seattle Street Food Festival',
-        followers: 517
+        followers: 517,
+        tickets:3
         
       },
       {
@@ -22,7 +23,8 @@ const events = [
         Address: '1611 Fairview Ave E • Seattle, WA',
         price: 'Starts at $30.00',
         name: 'Surreal Events- Seattles premier promoter for fun events for 21+ adults',
-        followers: 37
+        followers: 37,
+        tickets:16
         },
       {
         _id: '3',
@@ -34,7 +36,8 @@ const events = [
         Address: 'TBD • Seattle, WA',
         price: 'Free',
         name: 'Tech Career Fair',
-        followers: '12.2k'
+        followers: '12.2k',
+        tickets:0
         
       }
       
