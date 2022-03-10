@@ -27,7 +27,7 @@ const events = [
       {
         _id: '3',
         title: 'Seattle Tech Career Fair:Exclusive Tech Hiring Event-New Tickets Available',
-        image: '/images/id_1.jpg',
+        image: '/images/id_3.jpg',
         description:
           "Seattle's largest 21+ only indoor Night Market returns for the ultimate night of eating, drinking & shopping local at Magnuson Hangar 30.",
         schedule: 'Mon, Mar 28, 9:00 AM',
