@@ -8,6 +8,8 @@ const events = [
         schedule: 'Sat, Mar 19, 2:00 PM',
         Address: 'Magnuson Park Hangar 30 • Seattle, WA',
         price: 'Starts at $12.50',
+        adtprice: "25 for 15+ years old",
+        kidprice: "12.50 for 5-12 years old" ,
         name: 'Seattle Street Food Festival',
         followers: 517,
         tickets:3
@@ -22,6 +24,8 @@ const events = [
         schedule: 'Sat, Mar 12, 7:00 PM',
         Address: '1611 Fairview Ave E • Seattle, WA',
         price: 'Starts at $30.00',
+        adtprice: "45.00 for 15+ years old",
+        kidprice: "30.00 for 5-12 years old" ,
         name: 'Surreal Events- Seattles premier promoter for fun events for 21+ adults',
         followers: 37,
         tickets:16
