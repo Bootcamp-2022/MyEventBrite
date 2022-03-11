@@ -3,7 +3,7 @@ import { BrowserRouter as Router,Route,Routes} from 'react-router-dom'
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HomeScreen from "./Screens/HomeScreen";
-
+import EventScreen from "./Screens/EventScreen";
 
 function App() {
   return (
@@ -14,7 +14,8 @@ function App() {
         <Container>
         <Routes>
        < Route path='/' element={<HomeScreen />} exact />
-       </Routes>
+       <Route path='/event/:id' element={<EventScreen />} /> 
+         </Routes>     
         </Container>
       </main>
       <Footer />
