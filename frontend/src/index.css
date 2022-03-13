@@ -25,3 +25,34 @@ code {
   font-family: 'Josefin Sans', sans-serif;
   
 }
+
+.brand{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size:x-large;
+  }
+  #dropdown-button-dark{
+   
+    border: none;
+  color: black;
+  padding: 5px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+      }
+.btn-block{
+  background-color: #4CAF50;
+  color:black;
+  border-radius: 0%;
+  width: 200px;
+  margin-left:30px;
+  margin-top: 10px;
+}
+#follow{
+  border-radius: 10%;
+  background-color: white;
+  color:blue;
+  font-weight: bold;
+  border: 2px solid blue;
+ 
+}
