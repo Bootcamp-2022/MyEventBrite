@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import {
   Row,
@@ -7,11 +8,22 @@ import {
   ListGroup,
     Button,
 } from "react-bootstrap";
-import events from "../events";
+
 
 const EventScreen1 = () => {
   const params = useParams();
-  const event = events.find((e) => e._id === params.id);
+  const [event, setEvent] = useState({})
+ 
+ useEffect(() => {
+    const fetchEvent = async () => {
+      const {data} = await axios.get(`/api/events/${params.id}`)
+
+      setEvent(data)
+    }
+
+    fetchEvent()
+ }, [])
+  
   return (
     <>
       <div className="container my-4">
@@ -21,7 +33,7 @@ const EventScreen1 = () => {
           </Col>
           <Col class="column" md={3} xs={12} sm={12}>
             <ListGroup>
-              <ListGroup.Item>{event.schedule.slice(5, 8)}<br/>{event.schedule.slice(8, 11)}</ListGroup.Item>
+              {/* <ListGroup.Item>{event.schedule.slice(5, 8)}<br/>{event.schedule.slice(8, 11)}</ListGroup.Item> */}
               <ListGroup.Item>
                 <h3>{event.title}</h3>
               </ListGroup.Item>
