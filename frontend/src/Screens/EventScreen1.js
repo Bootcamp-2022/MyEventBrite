@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import {
   Row,
   Col,
@@ -27,18 +27,19 @@ const EventScreen1 = () => {
   return (
     <>
       <div className="container my-4">
-        <Row class="justify-content-md-center">
-          <Col class="column" md={9} xs={12} sm={12}>
+        <Row className="justify-content-md-center">
+          <Col className="column" md={9} xs={12} sm={12}>
             <Image src={event.image1} alt={event.name} />
           </Col>
-          <Col class="column" md={3} xs={12} sm={12}>
+          <Col className="column" md={3} xs={12} sm={12}>
             <ListGroup>
-              {/* <ListGroup.Item>{event.schedule.slice(5, 8)}<br/>{event.schedule.slice(8, 11)}</ListGroup.Item> */}
+              
+              <ListGroup.Item>{event.schedule?event.schedule.slice(5,11):""}</ListGroup.Item>
               <ListGroup.Item>
                 <h3>{event.title}</h3>
               </ListGroup.Item>
               <ListGroup.Item>
-                <p style={{ color: "red" }}>by {event.name}</p>
+                <p>by <span style={{ color: "red" }}>{event.name}</span> </p>
                 <p>{event.followers} followers <Button id = "follow" variant="primary" size="sm">
                  Follow  </Button></p>
               </ListGroup.Item>

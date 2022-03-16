@@ -7,7 +7,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col className='text-center py-3'>
-            Copyright &copy; Our Event Brite Name Here
+            Copyright &copy; Created by Rustam, Purnima and Michaela
           </Col>
         </Row>
         </Container>
