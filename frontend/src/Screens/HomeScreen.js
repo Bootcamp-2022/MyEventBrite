@@ -17,7 +17,7 @@ const HomeScreen = () => {
 
   return (
     <>
-    <div><img className="img" src={myImg} alt="homepage"></img></div>
+    <div><img className="img my-3" src={myImg} alt="homepage"></img></div>
     <h1 class = 'my-4'> Upcoming Events Near You</h1>
     <Row>
         {events.map((e) => (<Col key={e._id} sm={12} md={6} lg={4} xl={3}><Event event={e} /></Col> ))}
