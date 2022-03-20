@@ -3,7 +3,6 @@
    
 
     {
-        _id: '1',
         title: 'Seattle Night Market',
         image: '/images/id_1.jpg',
         image1: '/images/id_1_1.jpg',
@@ -21,7 +20,6 @@
         
       },
       {
-        _id: '2',
         title: "Holi Fest Bollywood Boat Party Seattle 2022 | After Party Included",
         image: '/images/id_2.jpg',
         image1: '/images/id_2_2.jpg',
@@ -38,7 +36,6 @@
         tickets:16
         },
       {
-        _id: '3',
         title: 'Seattle Tech Career Fair:Exclusive Tech Hiring Event-New Tickets Available',
         image: '/images/id_3.jpg',
         image1: '/images/id_3_3.jpg',
@@ -53,7 +50,6 @@
         tickets:0
               },
               {
-                _id: '4',
                 title: "IBT Presents ALICE IN WONDERLAND",
                 image: '/images/id_4.jpg',
                 image1: '/images/id_4_4.jpg',

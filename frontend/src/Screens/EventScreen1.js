@@ -22,7 +22,7 @@ const EventScreen1 = () => {
     }
 
     fetchEvent()
- }, [])
+ }, [params])
   
   return (
     <>
