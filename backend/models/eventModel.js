@@ -14,7 +14,10 @@ const eventSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    
+    image1: {
+        type: String,
+        required: true
+    },
     description: {
         type: String,
         required: true
