@@ -4,6 +4,8 @@ import {Row, Col} from 'react-bootstrap'
 import Event from '../components/Event'
 import myImg from "../../src/images/homePage.jpg";
 import { listEvents } from '../actions/eventActions';
+import Loader from '../components/Loader';
+import Message from '../components/Message';
 
 const HomeScreen = () => {
   const dispatch = useDispatch()
@@ -18,9 +20,9 @@ const HomeScreen = () => {
     <div><img className="img my-3" src={myImg} alt="homepage"></img></div>
     <h1 className = 'my-4'> Upcoming Events Near You</h1>
     {loading ? (
-      <h2>Loading...</h2>
+     <Loader/>
     ): error ? (
-      <h3>{error}</h3>
+      <Message variant='danger'>{error}</Message>
     ) : ( <Row>
     {events.map((e) => (<Col key={e._id} sm={12} md={6} lg={4} xl={3}><Event event={e} /></Col> ))}
 

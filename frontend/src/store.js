@@ -1,10 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import { eventListReducer } from './reducers/eventReducers'
+import { eventListReducer,eventReducer } from './reducers/eventReducers'
 import {composeWithDevTools} from 'redux-devtools-extension'
 
 const reducer = combineReducers({
-    eventList: eventListReducer
+    eventList: eventListReducer,
+    eventDetails: eventReducer
 })
 const initialState = {}
 const middleware = [thunk]

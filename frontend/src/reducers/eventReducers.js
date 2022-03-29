@@ -1,4 +1,4 @@
-import { EVENT_LIST_FAIL, EVENT_LIST_REQUEST, EVENT_LIST_SUCCESS } from "../constants/eventConstants";
+import { EVENT_LIST_FAIL, EVENT_LIST_REQUEST, EVENT_LIST_SUCCESS, EVENT_REQUEST,EVENT_SUCCESS,EVENT_FAIL } from "../constants/eventConstants";
 
 
 export const eventListReducer = (state = {events: []},
@@ -14,3 +14,17 @@ action) => {
             return state 
     }
 }
+
+export const eventReducer = (state={event:{}},action) => {
+    switch (action.type){
+      case    EVENT_REQUEST:
+        return {loading:true, ...state}
+      case EVENT_SUCCESS:
+        return {loading:false, event:action.payload}
+        case EVENT_FAIL:
+          return {loading:false, error:action.payload}  
+        default: 
+        return state  
+    }
+    
+    }
