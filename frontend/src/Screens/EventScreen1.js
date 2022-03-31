@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { useDispatch,useSelector } from 'react-redux'
+
 import { useParams } from "react-router-dom";
 import {
   Row,
@@ -8,72 +9,71 @@ import {
   ListGroup,
     Button,
 } from "react-bootstrap";
+import { listEvent } from "../actions/eventActions";
+import Loader from "../components/Loader";
+import Message from "../components/Message";
 
 
 const EventScreen1 = () => {
   const params = useParams();
-  const [event, setEvent] = useState({})
- 
+  const dispatch = useDispatch()
+   const eventDetails = useSelector((state) => state.eventDetails)
+   const {loading, error, event} = eventDetails
  useEffect(() => {
-    const fetchEvent = async () => {
-      const {data} = await axios.get(`/api/events/${params.id}`)
-
-      setEvent(data)
-    }
-
-    fetchEvent()
- }, [params])
+  dispatch(listEvent(params.id)) 
+ }, [dispatch,params])
   
   return (
     <>
-      <div className="container my-4">
-        <Row className="justify-content-md-center">
-          <Col className="column" md={9} xs={12} sm={12}>
-            <Image src={event.image1} alt={event.name} />
-          </Col>
-          <Col className="column" md={3} xs={12} sm={12}>
-            <ListGroup>
+  {loading ? (
+     <Loader/>
+   ): error ? (
+    <Message variant='danger'>{error}</Message>
+   ):  (<div className="container">
+   <Row className="justify-content-md-center">
+     <Col className="column" md={9} xs={12} sm={12}>
+       <Image src={event.image1} alt={event.name} />
+            </Col>
+     <Col className="column" md={3} xs={12} sm={12}>
+       <ListGroup>
+       <ListGroup.Item>{event.schedule?event.schedule.slice(4,11):""}</ListGroup.Item>
+         {/* <ListGroup.Item>{event.schedule.slice(5, 8)}<br/>{event.schedule.slice(8, 11)}</ListGroup.Item> */}
+         <ListGroup.Item>
+           <h3>{event.title}</h3>
+         </ListGroup.Item>
+         <ListGroup.Item>
+           <p>by <span style={{ color: "darkblue" }}>{event.name}</span></p>
+           <p>{event.followers} followers <Button id = "follow" variant="primary" size="sm">
+ Follow  </Button></p>
+         </ListGroup.Item>
+          <ListGroup.Item>{event.kidprice?`$${event.kidprice.slice(0,6)}`:"Free"} - {event.adtprice?`$${event.adtprice.slice(0,6)}`:"Event"}</ListGroup.Item>
+                </ListGroup>
+         
+       <Button 
+         className="btn-block"
+         type="button"
+         disabled={event.tickets === 0?true:false} 
+       >
+        {event.price === "Free" ? "Register" : "Tickets"}
+       </Button>
               
-              <ListGroup.Item>{event.schedule?event.schedule.slice(5,11):""}</ListGroup.Item>
-              <ListGroup.Item>
-                <h3>{event.title}</h3>
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <p>by <span style={{ color: "red" }}>{event.name}</span> </p>
-                <p>{event.followers} followers <Button id = "follow" variant="primary" size="sm">
-                 Follow  </Button></p>
-              </ListGroup.Item>
-
-              {/* <ListGroup.Item>Price: ${event.adtprice?event.adtprice: "Free"}</ListGroup.Item>
-            <ListGroup.Item>Price: ${event.kidprice?event.kidprice: "Free"}</ListGroup.Item>     */}
-              <ListGroup.Item>{event.kidprice?`$${event.kidprice.slice(0,6)}`:"Free"} - {event.adtprice?`$${event.adtprice.slice(0,6)}`:"Event"}</ListGroup.Item>
-            
-              </ListGroup>
-            <Button
-              className="btn-block"
-              type="button"
-              disabled={event.tickets === 0}
-            >
-             {event.price === "Free" ? "Register" : "Tickets"}
-            </Button>
-          </Col>
-        </Row>
-        <hr />
-
-        <Row>
-          <Col md={9} xs={12} sm={12}>
-        <ListGroup.Item>
-          <h5>{event.description}</h5>{" "}
-        </ListGroup.Item>
-        </Col>
-        <Col md={3} xs={12} sm={12}>
-        <p>Date and time</p>
-        <p>{event.schedule}</p>
-        <p>Location <br/> {event.Address}</p>
-                
-        </Col>
-        </Row>
-      </div>
+           </Col>
+   </Row>
+   <hr />
+   <Row>
+     <Col md={9} xs={12} sm={12}>
+   <ListGroup.Item>
+     <h5>{event.description}</h5>{" "}
+   </ListGroup.Item>
+   </Col>
+   <Col md={3} xs={12} sm={12}>
+   <p>Date and time</p>
+   <p>{event.schedule}</p>
+   <p>Location <br/> {event.Address}</p>
+      </Col>
+   </Row>
+ </div>)}
+     
     </>
   );
 };
