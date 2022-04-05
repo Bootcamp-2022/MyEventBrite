@@ -1,4 +1,4 @@
-import { EVENT_LIST_FAIL, EVENT_LIST_REQUEST, EVENT_LIST_SUCCESS, EVENT_REQUEST,EVENT_SUCCESS,EVENT_FAIL } from "../constants/eventConstants";
+import { EVENT_LIST_FAIL, EVENT_LIST_REQUEST, EVENT_LIST_SUCCESS, EVENT_REQUEST,EVENT_SUCCESS,EVENT_FAIL, EVENT_RESERVE_REQUEST,EVENT_RESERVE_SUCCESS,EVENT_RESERVE_FAIL } from "../constants/eventConstants";
 
 
 export const eventListReducer = (state = {events: []},
@@ -26,5 +26,17 @@ export const eventReducer = (state={event:{}},action) => {
         default: 
         return state  
     }
-    
-    }
+        }
+
+        export const eventReserveReducer = (state={event:{}},action) => {
+          switch (action.type){
+            case EVENT_RESERVE_REQUEST:
+              return {loading: true,...state}
+              case EVENT_RESERVE_SUCCESS:
+                return {laoding:false, event: action.payload}
+                case EVENT_RESERVE_FAIL:
+                  return {loading:false, error:action.payload}  
+                  default: 
+                  return state  
+          }
+        }

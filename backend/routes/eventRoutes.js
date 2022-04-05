@@ -27,4 +27,17 @@ router.get('/:id', asyncHandler(async (req, res) => {
    }
 }))
 
+//@desc Fetch single event by id to select the events to book
+//@route GET /api/events/reserve/:id
+// @access Public
+router.get('/reserve/:id', asyncHandler(async (req,res) => {
+    const event = await Events.findById(req.params.id)
+    
+    if(event){
+        res.json(event)
+    }else{
+        res.status(404).json({message: 'Event not found'})
+    }
+}))
+
 export default router

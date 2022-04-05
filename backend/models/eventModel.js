@@ -39,11 +39,11 @@ const eventSchema = mongoose.Schema({
         required: true
     },
     adtprice: {
-        type: String,
+        type: Number,
 
     },
     kidprice: {
-        type: String,
+        type: Number,
      
     },
     name: {

@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch,useSelector } from 'react-redux'
 
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import {
   Row,
   Col,
   Image,
   ListGroup,
-    Button,
+    Button
 } from "react-bootstrap";
 import { listEvent } from "../actions/eventActions";
 import Loader from "../components/Loader";
@@ -46,9 +46,9 @@ const EventScreen1 = () => {
            <p>{event.followers} followers <Button id = "follow" variant="primary" size="sm">
  Follow  </Button></p>
          </ListGroup.Item>
-          <ListGroup.Item>{event.kidprice?`$${event.kidprice.slice(0,6)}`:"Free"} - {event.adtprice?`$${event.adtprice.slice(0,6)}`:"Event"}</ListGroup.Item>
+          <ListGroup.Item>{event.kidprice?`$${event.kidprice}`:"Free"} - {event.adtprice?`$${event.adtprice}`:"Event"}</ListGroup.Item>
                 </ListGroup>
-         
+                <Link to ={`/reserve/${event._id}`}> 
        <Button 
          className="btn-block"
          type="button"
@@ -56,7 +56,7 @@ const EventScreen1 = () => {
        >
         {event.price === "Free" ? "Register" : "Tickets"}
        </Button>
-              
+           </Link>   
            </Col>
    </Row>
    <hr />

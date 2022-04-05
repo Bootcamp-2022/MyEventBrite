@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import HomeScreen from "./Screens/HomeScreen";
 //import EventScreen from "./Screens/EventScreen";
 import EventScreen1 from "./Screens/EventScreen1";
+import CartScreen from './Screens/CartScreen'
+import Reserve from './components/Reserve'
 
 function App() {
   return (
@@ -16,6 +18,9 @@ function App() {
         <Routes>
        < Route path='/' element={<HomeScreen />} exact />
        <Route path='/event/:id' element={<EventScreen1 />} /> 
+       <Route path= '/reserve/:id' element={<Reserve />} />
+       <Route path= '/cart/:id' element={<CartScreen />} />
+       <Route path= '/tickets' element={<CartScreen />} />
          </Routes>     
         </Container>
       </main>
