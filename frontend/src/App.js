@@ -7,6 +7,8 @@ import EventScreen1 from "./Screens/EventScreen1";
 import CartScreen from './Screens/CartScreen'
 import Reserve from './components/Reserve'
 import LoginScreen from "./Screens/LoginScreen";
+import RegisterScreen from "./Screens/RegisterScreen";
+import ProfileScreen from "./Screens/ProfileScreen";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Routes>
        < Route path='/' element={<HomeScreen />} exact />
        < Route path='/login' element={<LoginScreen />}  />
+       <Route path="/profile" element={<ProfileScreen />} />
+       <Route path="/register" element={<RegisterScreen />} />
        <Route path='/event/:id' element={<EventScreen1 />} /> 
        <Route path= '/reserve/:id' element={<Reserve />} />
        <Route path= '/cart/:id' element={<CartScreen />} />
@@ -32,3 +36,4 @@ function App() {
 }
 
 export default App;
+

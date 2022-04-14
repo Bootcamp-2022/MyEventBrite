@@ -6,7 +6,7 @@ import Message from "./Message";
 import Loader from "./Loader";
 import { reserveEvent } from '../actions/eventActions'
 const Reserve = () => {
-  const [qty1, setQty1] = useState(0);
+  const [qty1, setQty1] = useState(1);
   // const [qty2, setQty2] = useState(0);
   const params = useParams()
   const dispatch = useDispatch()
