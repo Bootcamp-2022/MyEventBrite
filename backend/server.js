@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import connectDB from './config/db.js'
 import eventRoutes from './routes/eventRoutes.js'
+import orderRoutes from './routes/orderRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import { errorHandler, notFound } from './middleware/errorMiddleware.js'
 //import { protect } from './middleware/authMiddleware.js'
@@ -17,6 +18,7 @@ app.get('/', (req,res) => {
 app.use(express.json())
 app.use('/api/events', eventRoutes)
 app.use('/api/users', userRoutes)
+app.use('/api/orders', orderRoutes)
 app.use(notFound)
 app.use(errorHandler)
 //app.use(protect)
