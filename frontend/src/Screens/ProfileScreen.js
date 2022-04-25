@@ -47,16 +47,16 @@ const submitHandler = (e) => {
             }
 }
   return (
-<Row>
-<Col md={3}>
+<Row >
+<Col md={3} className = "my-5">
         <h2>User Profile</h2>
         {message && <Message variant='danger'>{message}</Message>}
         {error && <Message variant='danger'>{error}</Message>}
         {success && <Message variant='success' >Profile Updated</Message>}
         {loading && <Loader />}
         <Form onSubmit={submitHandler}>
-          <Form.Group controlId='name'>
-            <Form.Label>Name</Form.Label>
+          <Form.Group  controlId='name'>
+            <Form.Label className = "my-3">Name</Form.Label>
             <Form.Control
               type='name'
               placeholder='Enter name'
@@ -66,7 +66,7 @@ const submitHandler = (e) => {
           </Form.Group>
 
           <Form.Group controlId='email'>
-            <Form.Label>Email Address</Form.Label>
+            <Form.Label className = "my-3">Email Address</Form.Label>
             <Form.Control
               type='email'
               placeholder='Enter email'
@@ -76,7 +76,7 @@ const submitHandler = (e) => {
           </Form.Group>
 
           <Form.Group controlId='password'>
-            <Form.Label>Password</Form.Label>
+            <Form.Label className = "my-3">Password</Form.Label>
             <Form.Control
               type='password'
               placeholder='Enter password'
@@ -86,7 +86,7 @@ const submitHandler = (e) => {
           </Form.Group>
 
           <Form.Group controlId='confirmPassword'>
-            <Form.Label>Confirm Password</Form.Label>
+            <Form.Label className = "my-3">Confirm Password</Form.Label>
             <Form.Control
               type='password'
               placeholder='Confirm password'
@@ -94,12 +94,12 @@ const submitHandler = (e) => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             ></Form.Control>
           </Form.Group>
-          <Button className ='my-2'type='submit' variant='primary'>
+          <Button className ='my-3'type='submit' variant='primary'>
             Update
           </Button>
         </Form>
       </Col>
-      <Col md={9}>
+      <Col className = "my-5" md={9} style={{textAlign:'center'}}>
         <h2>My Orders</h2>
       </Col>
 </Row>

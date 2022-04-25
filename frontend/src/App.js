@@ -12,6 +12,7 @@ import ProfileScreen from "./Screens/ProfileScreen";
 import ShippingScreen from "./Screens/ShippingScreen";
 import PaymentScreen from "./Screens/PaymentScreen";
 import PlaceOrderScreen from "./Screens/PlaceOrderScreen";
+import OrderScreen from "./Screens/OrderScreen";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
        <Route path="/payment" element={<PaymentScreen />} />
        <Route path="/placeorder" element={<PlaceOrderScreen />} />
        <Route path='/event/:id' element={<EventScreen1 />} /> 
+       <Route path= '/order/:id' element={<OrderScreen />} />
        <Route path= '/reserve/:id' element={<Reserve />} />
        <Route path= '/cart/:id' element={<CartScreen />} />
        <Route path= '/tickets' element={<CartScreen />} />

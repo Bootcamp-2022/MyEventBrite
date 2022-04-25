@@ -74,6 +74,10 @@ if(user) {
 }
 })
 
+// @desc    Update user profile
+// @route   PUT /api/users/profile
+// @access  Private
+
 const updateUserProfile = asyncHandler(async(req,res) => {
    const user = await Users.findById(req.user._id)
    if(user) {
