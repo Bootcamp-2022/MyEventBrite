@@ -13,6 +13,7 @@ import ShippingScreen from "./Screens/ShippingScreen";
 import PaymentScreen from "./Screens/PaymentScreen";
 import PlaceOrderScreen from "./Screens/PlaceOrderScreen";
 import OrderScreen from "./Screens/OrderScreen";
+import ForgotPassword from "./Screens/ForgotPassword";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
        <Route path= '/reserve/:id' element={<Reserve />} />
        <Route path= '/cart/:id' element={<CartScreen />} />
        <Route path= '/tickets' element={<CartScreen />} />
+       < Route path='/forgotpassword' element={<ForgotPassword/>}  />
          </Routes>     
         </Container>
       </main>

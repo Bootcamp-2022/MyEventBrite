@@ -58,7 +58,7 @@ const LoginScreen = () => {
           Sign In
         </Button>
       </Form>
-
+       <p><Link to="/forgotpassword"> Forgot Password ?</Link></p> 
       <Row className="py-3">
         <Col>
           {" "}
